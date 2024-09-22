@@ -24,11 +24,11 @@ router.get('/:id', async (req, res) => {
       include: [{ model: Product }], // Associated product
     });
 
-    if (!tag) {
+    if (!tags) {
       return res.status(404).json({ message: 'Tag not found' });
     }
 
-    res.status(200).json(tag);
+    res.status(200).json(tags);
   } catch (err) {
     res.status(500).json(err);
   }
